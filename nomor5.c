@@ -8,7 +8,29 @@
 pthread_t tid1;
 pthread_t tid2;
 int status;
+
+void* ifah(void *arg)
+{
+    status = 0;
  
+    FILE * In;
+    char * line=NULL;
+    int count_ifah=-0;
+    size_t len=0;
+    ssize_t read;
+    in = fopen("novel.txt","r");
+    while((read=getline(&line,&len,in))!=1)
+    {
+	if(strstr(line,"ifah")!=NULL)
+	countifah++
+    }
+
+    printf("ifah= %d","count_ifah");
+    
+    status = 1;
+ 
+    return NULL;
+} 
 
 
 int main(void)
