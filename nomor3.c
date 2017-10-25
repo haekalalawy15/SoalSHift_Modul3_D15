@@ -23,7 +23,7 @@ void* lohan(void *arg)
 		system("clear");
 		printf("Status Lohan: %d\n",status_lohan);
 		printf("Status Kepiting: %d\n",status_kepiting);
-		printf("memberi makan kepiting: feed_kepiting , memberi makan lohan: feed_lohan");
+		printf("memberi makan kepiting: 1 , memberi makan lohan: 2\n");
 		//status_lohan=newstatus_lohan;
 	}while((status_lohan>0)&&(status_lohan<=100));
 	
@@ -43,7 +43,7 @@ void* kepiting(void *arg)
 		system("clear");
 		printf("Status Lohan: %d\n",status_lohan);
 		printf("Status Kepiting: %d\n",status_kepiting);
-		printf("memberi makan kepiting: feed_kepiting , memberi makan lohan: feed_lohan");
+		printf("memberi makan kepiting: 1 , memberi makan lohan: 2\n");
 	//status_kepiting=newstatus_kepiting;
 	} while((status_kepiting>0)&&(status_kepiting<=100));
 	
@@ -54,17 +54,29 @@ void* kepiting(void *arg)
 
 int main()
 {
-	char* feed;
+	int command;
 	
 	pthread_create(&tid1,NULL,&lohan,NULL);
 	pthread_create(&tid2,NULL,&kepiting,NULL);
-	printf("memberi makan kepiting: feed_kepiting , memberi makan lohan: feed_lohan");
+	printf("memberi makan kepiting: 1 , memberi makan lohan: 2\n");
 	while((status_lohan>0)&&(status_lohan<=100)&&(status_kepiting>0)&&(status_kepiting<=100))
 	{
 		if(status==1)break;
-		scanf("%s", feed);
-		if(strcmp(feed,"feed_lohan")==0) status_lohan+=10;
-		else if(strcmp(feed,"feed_kepiting")==0) status_kepiting+=10;
+		scanf("%d",& command);
+		if(command==2){
+			status_lohan+=10;
+			if(status_lohan>100){
+				printf("lohan mati\n");
+				break;
+			}
+		}
+		else if(command==1){
+			status_kepiting+=10;
+			if(status_kepiting>100){
+				printf("kepiting mati\n");
+				break;
+			}
+		}
 	}
 	pthread_join(tid1,NULL);
 	pthread_join(tid2,NULL);
