@@ -13,6 +13,59 @@ int terisi;
 char* player1;
 char* player2;
 
+void* turn_player1(void *arg)
+{
+
+    
+    while(poin1<10&&poin2<10){
+    	while(status == 1)
+    	{
+
+    	}
+		if(status==2)return NULL;
+		terisi=0;
+    	for(int i=0;i<2;i++){
+    		for(int j=1;j<=16;j++){
+    			if(ranjau[i][j]==1)terisi++;
+    		}
+    	}
+    	if(terisi==32)break;
+	char c;
+  	while(1){
+		printf("Show Point?(y/n)\n");
+ 		scanf(" %c", &c);
+    		if(c=='y'){show_point();break;}
+		else break;
+	}
+    	printf("%s, Isi Lubang?(Jika kurang dari 4, isi dengan 0)\n", &player1);
+    	for(int i=0;i<4;i++){
+    		int n;
+			scanf("%d", &n);
+			ranjau[0][n]=1;
+    	}
+    	
+    	system("clear");
+    	
+    	printf("%s, Tebak 4 Lubang\n", &player2);
+    	for(int i=0;i<4;i++){
+    		int n;
+			scanf("%d", &n);
+			if(ranjau[0][n]==1)poin1++;
+			else poin2++;
+    	}
+    	
+    	status=1;
+	}
+    printf("Permainan Berakhir\n");
+	show_point();
+	if(poin1>poin2)printf("%s menang\n", &player1);
+	else if(poin1<poin2)printf("%s menang\n", &player2);
+	else printf("Permainan Seri\n");
+	status=2;
+	return NULL;
+ 
+}
+
 int main()
 {
 	status = 0;
