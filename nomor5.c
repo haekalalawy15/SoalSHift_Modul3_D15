@@ -13,24 +13,47 @@ void* ifah(void *arg)
 {
     status = 0;
  
-    FILE * In;
+    FILE * in;
     char * line=NULL;
-    int count_ifah=-0;
+    int count_ifah=0;
     size_t len=0;
     ssize_t read;
-    in = fopen("novel.txt","r");
-    while((read=getline(&line,&len,in))!=1)
+    in = fopen("Novel.txt","r");
+    while((read=getline(&line,&len,in))!=-1)
     {
-	if(strstr(line,"ifah")!=NULL)
-	countifah++
+	if(strstr(line,"ifah")!=NULL||strstr(line,"Ifah")!=NULL)
+	count_ifah++;
     }
-
-    printf("ifah= %d","count_ifah");
+    fclose(in);
+    printf("ifah= %d \n",count_ifah);
     
-    status = 1;
+
  
     return NULL;
 } 
+
+
+void* fina(void *arg)
+{
+  
+ 
+    FILE * in;
+    char * line=NULL;
+    int count_fina=0;
+    size_t len=0;
+    ssize_t read;
+    in = fopen("Novel.txt","r");
+    while((read=getline(&line,&len,in))!=-1)
+    {
+	if(strstr(line,"fina")!=NULL||strstr(line,"Fina")!=NULL)
+	count_fina++;
+    }
+    fclose(in);
+    printf("fina= %d \n", count_fina);
+ 
+ 
+    return NULL;
+}
 
 
 int main(void)
