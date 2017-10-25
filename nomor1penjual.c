@@ -23,27 +23,27 @@ void main()
 				char *name;
 				scanf("%s", &name);
 				if(strcmp(name,"MP4A1")==0){
-					if(stock[0]>0)printf("Jumlah MP4A1 id stock= %d\n",stock[0]);
+					if(stock[0]>0)printf("Jumlah MP4A1 di stock= %d\n",stock[0]);
 					else printf("Stock tidak ada\n")
 				}
 				else if(strcmp(name,"PM2-V1")==0){
-					if(stock[1]>0)printf("Jumlah PM2-V1 id stock= %d\n",stock[1]);
+					if(stock[1]>0)printf("Jumlah PM2-V1 di stock= %d\n",stock[1]);
 					else printf("Stock tidak ada\n")
 				}
 				else if(strcmp(name,"SPR-3")==0){
-					if(stock[2]>0)printf("Jumlah SPR-3 id stock= %d\n",stock[2]);
+					if(stock[2]>0)printf("Jumlah SPR-3 di stock= %d\n",stock[2]);
 					else printf("Stock tidak ada\n")
 				}
 				else if(strcmp(name,"SS2-V5")==0){
-					if(stock[3]>0)printf("Jumlah SS2-V5 id stock= %d\n",stock[3]);
+					if(stock[3]>0)printf("Jumlah SS2-V5 di stock= %d\n",stock[3]);
 					else printf("Stock tidak ada\n")
 				}
 				else if(strcmp(name,"SPG1-V3")==0){
-					if(stock[4]>0)printf("Jumlah SPG1-V3 id stock= %d\n",stock[4]);
+					if(stock[4]>0)printf("Jumlah SPG1-V3 di stock= %d\n",stock[4]);
 					else printf("Stock tidak ada\n")
 				}
 				else if(strcmp(name,"MINE")==0){
-					if(stock[5]>0)printf("Jumlah MINE id stock= %d\n",stock[5]);
+					if(stock[5]>0)printf("Jumlah MINE di stock= %d\n",stock[5]);
 					else printf("Stock tidak ada\n")
 				}
 			}
